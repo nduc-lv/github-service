@@ -76,7 +76,7 @@ export class RabbitMQService {
      */
     async consume(
         queueName: string,
-        callback: (message: any) => Promise<void>
+        callback: (message: any) => Promise<any>
     ): Promise<void> {
         if (!this.channel) {
             throw new Error('Channel not initialized. Call connect() first.');
