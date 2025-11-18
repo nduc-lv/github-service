@@ -4,7 +4,10 @@ export const EXCHANGES = {
 
 export const QUEUE_NAMES = {
     GITHUB_SYNC: 'github-sync',
-    PROJECT_SYNC: 'project-sync'
 } as const;
+
+export const ANOTHER_QUEUE_NAMES = {
+    PROJECT_SYNC: 'projects-sync'
+}
 
 export type QueueName = typeof QUEUE_NAMES[keyof typeof QUEUE_NAMES];

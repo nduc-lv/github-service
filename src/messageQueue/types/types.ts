@@ -11,5 +11,6 @@ export type CloneProjectRequest = {
     authorId: string,
     githubUrl: string,
     projectName: string,
+    projectId: string,
     [key: string]: string
 }

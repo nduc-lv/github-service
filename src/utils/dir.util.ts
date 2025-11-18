@@ -87,6 +87,12 @@ export async function createProjectDirectory(
   projectName: string
 ): Promise<string> {
   const projectPath = getProjectPath(userId, projectName);
+
+  // If project path exists, delete it to ensure fresh clone
+  if (await directoryExists(projectPath)) {
+    await rm(projectPath, { recursive: true, force: true });
+  }
+
   await ensureDirectory(projectPath);
   return projectPath;
 }
